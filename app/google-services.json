@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "735515485375",
+    "project_id": "aurotravel-d0275",
+    "storage_bucket": "aurotravel-d0275.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735515485375:android:40ba619e91dd767b82520a",
+        "android_client_info": {
+          "package_name": "com.example.auotravels"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "735515485375-05hkelvqknk26e0f7uupctf88595j6pv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.auotravels",
+            "certificate_hash": "fc4c9fb9b9d965b174d9589fe01bf40c0a2b75d8"
+          }
+        },
+        {
+          "client_id": "735515485375-il4ire61rmieqa5cv5se42rmtbp43p15.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANZ5t8KV5ae9PRDti8tb7WDF2slbge-o0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "735515485375-il4ire61rmieqa5cv5se42rmtbp43p15.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
