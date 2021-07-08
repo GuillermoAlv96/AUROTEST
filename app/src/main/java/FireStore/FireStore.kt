@@ -1,9 +1,11 @@
 package FireStore
 
+import Activities.Client.activities.ClientCreateUser
 import Activities.Driver.ui.activities.DriverCreateUser
 import Activities.Driver.ui.activities.DriverLogin
 import Activities.Driver.ui.activities.DriverUpdate
 import Activities.Driver.ui.fragments.HomeFragment
+import Models.ClientUser
 import Models.DriverUser
 import android.app.Activity
 import android.content.Context
@@ -28,7 +30,7 @@ open class FireStore {
      * A function to make an entry of the registered user in the FireStore database.
      */
 
-    open fun registerUser(activity: DriverCreateUser, driverUserInfo: DriverUser) {
+    open fun registerUserDriver(activity: DriverCreateUser, driverUserInfo: DriverUser) {
 
         //The "user" is collection name. If the collection is already created then it will not create the same one again.
         mFireStore.collection(Constants.DRIVERUSERS)
@@ -150,6 +152,32 @@ open class FireStore {
                     "Error while updating the user details.",
                     e
                 )
+            }
+    }
+
+
+
+    /**
+     * A function to make an entry of the registered user in the FireStore database.
+     */
+
+    open fun registerUserClient(activity: ClientCreateUser, clientUserInfo: ClientUser) {
+
+        //The "user" is collection name. If the collection is already created then it will not create the same one again.
+        mFireStore.collection("Clients")
+
+            //Document Id for users fields. Here the document it is the User ID.
+            .document(clientUserInfo.id)
+
+            //Here the userInfo are Field amd SetOption is set to merge. It is in case we want to merge to merge later on instead of replacing the fields.
+            .set(clientUserInfo, SetOptions.merge())
+            .addOnSuccessListener { documentReference ->
+                activity.clientRegistrationSuccess()
+            }
+            .addOnFailureListener { e ->
+
+                Log.d("error","error")
+
             }
     }
 }

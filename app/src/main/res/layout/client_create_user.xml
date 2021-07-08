@@ -4,6 +4,163 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ClientCreateUser">
+    tools:context="Activities.Client.activities.ClientCreateUser">
 
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FIRSTNAME"
+        app:layout_constraintBottom_toTopOf="@+id/editTextClientFirstNameCreate"
+        app:layout_constraintStart_toStartOf="@+id/editTextClientFirstNameCreate" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PASSWORD"
+        app:layout_constraintBottom_toTopOf="@+id/editTextClientPasswordCreate"
+        app:layout_constraintStart_toStartOf="@+id/editTextClientPasswordCreate" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="E-MAIL"
+        app:layout_constraintBottom_toTopOf="@+id/editTextClientEmailCreate"
+        app:layout_constraintStart_toStartOf="@+id/editTextClientEmailCreate" />
+
+    <EditText
+        android:id="@+id/editTextPasswordClientCreate"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="52dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextClientPhoneCreate"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="@+id/editTextClientPhoneCreate"
+        app:layout_constraintTop_toBottomOf="@+id/editTextClientPhoneCreate" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="8dp"
+        android:text="REPEAT PASSWORD"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPasswordClientCreate"
+        app:layout_constraintStart_toStartOf="@+id/editTextPasswordClientCreate" />
+
+    <EditText
+        android:id="@+id/editTextClientLastNameCreate"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="56dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="4dp"
+        android:text="PHONE"
+        app:layout_constraintBottom_toTopOf="@+id/editTextClientPhoneCreate"
+        app:layout_constraintStart_toStartOf="@+id/editTextClientPhoneCreate" />
+
+    <EditText
+        android:id="@+id/editTextClientEmailCreate"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="48dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextClientFirstNameCreate"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextClientFirstNameCreate"
+        app:layout_constraintTop_toBottomOf="@+id/editTextClientFirstNameCreate" />
+
+    <EditText
+        android:id="@+id/editTextClientFirstNameCreate"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="100dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextClientPasswordCreate"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="52dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextClientEmailCreate"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="@+id/editTextClientEmailCreate"
+        app:layout_constraintTop_toBottomOf="@+id/editTextClientEmailCreate" />
+
+    <EditText
+        android:id="@+id/editTextClientPhoneCreate"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="48dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextClientLastNameCreate"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextClientLastNameCreate"
+        app:layout_constraintTop_toBottomOf="@+id/editTextClientLastNameCreate" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="4dp"
+        android:text="LASTNAME"
+        app:layout_constraintBottom_toTopOf="@+id/editTextClientLastNameCreate"
+        app:layout_constraintStart_toStartOf="@+id/editTextClientLastNameCreate" />
+
+    <Button
+        android:id="@+id/buttonRegisterClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="204dp"
+        android:text="Register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPasswordClientCreate"
+        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintStart_toStartOf="@+id/editTextClientPasswordCreate" />
+
+    <CheckBox
+        android:id="@+id/checkBoxClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="CheckBox"
+        app:layout_constraintEnd_toEndOf="@+id/buttonRegisterClient"
+        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintStart_toStartOf="@+id/buttonRegisterClient"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRegisterClient" />
 </androidx.constraintlayout.widget.ConstraintLayout>

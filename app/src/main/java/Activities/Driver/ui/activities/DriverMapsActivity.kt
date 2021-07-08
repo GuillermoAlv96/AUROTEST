@@ -3,28 +3,33 @@ package Activities.Driver.ui.activities
 import android.Manifest
 import android.annotation.SuppressLint
 import android.location.Geocoder
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.widget.ProgressBar
 import android.widget.Toast
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
+import androidx.appcompat.app.AppCompatActivity
 import com.example.auotravels.R
 import com.example.auotravels.databinding.ActivityMapsBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.vmadalin.easypermissions.EasyPermissions
 import kotlinx.android.synthetic.main.activity_maps.*
+import kotlinx.coroutines.handleCoroutineException
 import utils.Constants.PERMISSION_LOCATION_REQUEST_CODE
+
 
 class DriverMapsActivity : AppCompatActivity(), OnMapReadyCallback, EasyPermissions.PermissionCallbacks {
 
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMapsBinding
     private lateinit var fusedLocationClient: FusedLocationProviderClient
+    val handler : Handler= Handler() // En esta zona creamos el objeto Handler
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +37,8 @@ class DriverMapsActivity : AppCompatActivity(), OnMapReadyCallback, EasyPermissi
 
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        var _progressBar: ProgressBar
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
@@ -44,6 +51,9 @@ class DriverMapsActivity : AppCompatActivity(), OnMapReadyCallback, EasyPermissi
         //Request permission
         requestLocationPermissions()
 
+        realTimeLocation()
+
+
         buttonGetLocation.setOnClickListener {
             getCurrentLocation()
         }
@@ -55,10 +65,10 @@ class DriverMapsActivity : AppCompatActivity(), OnMapReadyCallback, EasyPermissi
         mMap = googleMap
 
         // Set the map type to Normal.
-        googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        googleMap.mapType = GoogleMap.MAP_TYPE_NORMAL
 
         // Display traffic.
-        googleMap.setTrafficEnabled(true);
+        googleMap.isTrafficEnabled = true
 
 
     }
@@ -119,5 +129,11 @@ class DriverMapsActivity : AppCompatActivity(), OnMapReadyCallback, EasyPermissi
             "Permision Granted",
             Toast.LENGTH_SHORT
         ).show()
+    }
+
+
+    private fun realTimeLocation(){
+        Thread.sleep(5000)
+        getCurrentLocation()
     }
 }
