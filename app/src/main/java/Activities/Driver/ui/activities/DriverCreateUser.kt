@@ -135,7 +135,7 @@ class DriverCreateUser : AppCompatActivity() {
 
                         )
                         // Pass the required values in the constructor.
-                        FireStore().registerUser(this@DriverCreateUser, driverUser)
+                        FireStore().registerUserDriver(this@DriverCreateUser, driverUser)
 
                     } else {
                         // If sign in fails, display a message to the user.
